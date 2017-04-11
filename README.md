@@ -10,7 +10,7 @@ This container uses GoDaddyPy Python library. Check @ https://github.com/eXamade
   - **DGDP_DOMAIN**: your domain
   - **DGDP_APIKEY**: API key from GoDaddy (see below)
   - **DGDP_APISECRET**: API secret from GoDaddy (see below)
-  - **DGDP_SLEEPTIME**: sleep time before trying to update the IP address again.
+  - **DGDP_SLEEPTIME**: sleep time before trying to update the IP address again (in seconds).
 
 The other environment variables were not tested. 
 
