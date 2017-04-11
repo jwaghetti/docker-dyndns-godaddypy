@@ -12,11 +12,15 @@ This container uses GoDaddyPy Python library. Check @ https://github.com/eXamade
   - **DGDP_APISECRET**: API secret from GoDaddy (see below)
   - **DGDP_SLEEPTIME**: sleep time before trying to update the IP address again.
 
+The other environment variables were not tested. 
+
 ## How to Request API Key and Secret
 
 Go to https://developer.godaddy.com/keys/ and request a production API key and secret. If the generated pair does not work, delete and request a new one.
 
 ## Running Outside a Container.
+
+You need to have *Pyhton* and *pip* installed.
 
 - Go to *script* folder.
 - **$ pip install -r requirements.txt**
