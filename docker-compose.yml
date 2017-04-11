@@ -1,0 +1,15 @@
+
+version: '2'
+
+services:
+  dyndns-godaddypy:
+    restart: always
+    build: .
+    environment:
+      - DGDP_DOMAIN=example.com
+      - DGDP_ARECORD=
+      - DGDP_RECORDTYPE=A
+      - DGDP_APIKEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      - DGDP_APISECRET=XXXXXXXXXXXXXXXXXXXXXX
+      - DGDP_SLEEPTIME=300
+
