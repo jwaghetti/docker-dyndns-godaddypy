@@ -1,4 +1,4 @@
-# dyndns-godaddypy
+# docker-dyndns-godaddypy
 
 Docker container to update the DNS subdomainsrecords for a GoDaddy domain to point to a dynamic IP address.
 
