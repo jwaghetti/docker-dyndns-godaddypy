@@ -1,6 +1,6 @@
 # dyndns-godaddypy
 
-Docker container to update the DNS records for a GoDaddy domain to point to a dynamic IP address.
+Docker container to update the DNS subdomainsrecords for a GoDaddy domain to point to a dynamic IP address.
 
 This container uses GoDaddyPy Python library. Check @ https://github.com/eXamadeus/godaddypy 
 
@@ -11,6 +11,7 @@ This container uses GoDaddyPy Python library. Check @ https://github.com/eXamade
   - **DGDP_APIKEY**: API key from GoDaddy (see below)
   - **DGDP_APISECRET**: API secret from GoDaddy (see below)
   - **DGDP_SLEEPTIME**: sleep time before trying to update the IP address again (in seconds).
+  - **DGDP_SUBDOMAINS**: comma separated subdomains.
 
 The other environment variables were not tested. 
 
@@ -30,4 +31,4 @@ You need to have *Pyhton* and *pip* installed.
 
 The record is updated immediately on GoDaddy domain configuration, but it takes some time to propagate the DNS records.
 
-The code was tested only for A_RECORD='' and RECORD_TYPE='A'. Check GoDaddyPy lib to adapt the script to your needs.
+The script only updates records already existent. Check GoDaddyPy lib to adapt the script to your needs (including creating new records on the code).
