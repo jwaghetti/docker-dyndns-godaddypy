@@ -7,9 +7,10 @@ services:
     build: .
     environment:
       - DGDP_DOMAIN=example.com
-      - DGDP_ARECORD=
       - DGDP_RECORDTYPE=A
       - DGDP_APIKEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
       - DGDP_APISECRET=XXXXXXXXXXXXXXXXXXXXXX
+      - DGDP_SUBDOMAINS=subdmain1,subdomain2,subdomain3
       - DGDP_SLEEPTIME=300
+      - PYTHONUNBUFFERED=0
 
