@@ -20,7 +20,6 @@ sleep_time = float(os.environ['DGDP_SLEEPTIME'])
 var = 1
 
 while var == 1:
-
    
     userAccount = Account(api_key=api_key, api_secret=api_secret)
     userClient = Client(userAccount)
@@ -31,6 +30,7 @@ while var == 1:
         for record in records:
             if record["name"] in subdomains:
                 print(record["name"])
+                subdomains.remove(record["name"])
                 if publicIP == record["data"]:
                     updateResult = True
                     print('No DNS update needed.')
@@ -40,9 +40,17 @@ while var == 1:
                 if updateResult != True:
                      print('Error updating DNS');
 
+        for subdomain in subdomains:
+            print('Creating subdomain');
+            print(subdomain)
+            if userClient.add_record(domain, {'data':publicIP, 'name':subdomain, 'ttl':3600, 'type':record_type}):
+               print('Domain created')
+            else:
+               print('Domain creation error')
+ 
+
         print("Sleeping")
         time.sleep( sleep_time ) 
 
     except:
         print(sys.exc_info()[1])
-   	
