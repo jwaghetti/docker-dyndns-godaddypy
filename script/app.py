@@ -20,17 +20,22 @@ sleep_time = float(os.environ['DGDP_SLEEPTIME'])
 var = 1
 
 while var == 1:
-   
+    print('--------------------') 
     userAccount = Account(api_key=api_key, api_secret=api_secret)
     userClient = Client(userAccount)
     publicIP = pif.get_public_ip('ident.me')
+    print(publicIP)
+
+    # subdomains_tmp will contain the subdomains to be created
+    # after the current registered subdomains are updated
+    subdomains_tmp = list(subdomains)
     
     try:
         records = userClient.get_records(domain, record_type=record_type)
         for record in records:
             if record["name"] in subdomains:
                 print(record["name"])
-                subdomains.remove(record["name"])
+                subdomains_tmp.remove(record["name"])
                 if publicIP == record["data"]:
                     updateResult = True
                     print('No DNS update needed.')
@@ -40,7 +45,7 @@ while var == 1:
                 if updateResult != True:
                      print('Error updating DNS');
 
-        for subdomain in subdomains:
+        for subdomain in subdomains_tmp:
             print('Creating subdomain');
             print(subdomain)
             if userClient.add_record(domain, {'data':publicIP, 'name':subdomain, 'ttl':3600, 'type':record_type}):
