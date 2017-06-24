@@ -3,6 +3,7 @@ version: '2'
 
 services:
   dyndns-godaddypy:
+    container_name: dyndns-godaddypy
     restart: always
     build: .
     logging:
