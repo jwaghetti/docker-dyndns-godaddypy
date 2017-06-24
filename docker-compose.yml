@@ -5,6 +5,12 @@ services:
   dyndns-godaddypy:
     restart: always
     build: .
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "10"
+
     environment:
       - DGDP_DOMAIN=example.com
       - DGDP_RECORDTYPE=A
