@@ -60,7 +60,8 @@ while var == 1:
                print('Subdomain creation error')
  
 
-        time.sleep( sleep_time ) 
 
     except:
         print(sys.exc_info()[1])
+
+    time.sleep( sleep_time ) 
