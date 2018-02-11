@@ -19,5 +19,13 @@ services:
       - DGDP_APISECRET=XXXXXXXXXXXXXXXXXXXXXX
       - DGDP_SUBDOMAINS=subdmain1,subdomain2,subdomain3
       - DGDP_SLEEPTIME=150
+      - DGDP_MAILFROM=example@mail.com
+      - DGDP_MAILTO=example@mail.com
+      - DGDP_MAILSUBJECT='Mail Subject'
+      - DGDP_SENDMAIL=False
+      - DGDP_SMTPSERVER=smtp.gmail.com
+      - DGDP_SMTPPORT=587
+      - DGDP_SMTPUSER=user
+      - DGDP_SMTPPASSWORD=pass
       - PYTHONUNBUFFERED=0
 
