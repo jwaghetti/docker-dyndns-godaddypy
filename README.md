@@ -4,6 +4,8 @@ Docker container to update the DNS subdomainsrecords for a GoDaddy domain to poi
 
 This container uses GoDaddyPy Python library. Check @ https://github.com/eXamadeus/godaddypy 
 
+Official Public Repository: https://gitlab.com/jwaghetti/docker-dyndns-godaddypy
+
 ## How to Use:
 
 - Update the *docker-compose.yml* file with the following info:
